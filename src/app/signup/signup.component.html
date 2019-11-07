@@ -1,0 +1,42 @@
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12 text-center">
+            <mat-card class="mt-2">
+            <form name="form" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+                    <div class="list-view text-center">
+                            <div class="list-header">
+                                    <h2 class="bounceOut">Sign-Up</h2>
+                            </div>
+                <br>
+                <div class="form-container">
+                    <mat-form-field appearance="outline">
+                            <mat-label>UserName</mat-label>
+                            <input matInput autocomplete="off" id="username" name="username" ngModel required>
+                            <mat-icon matSuffix class="text-warning">sentiment_very_satisfied</mat-icon>
+                          </mat-form-field>
+                              <br>
+                          <mat-form-field appearance="outline">
+                              <mat-label>Email:Id</mat-label>
+                              <input matInput placeholder="Enter your email" id="emailid" name="emailid" ngModel required>
+                              <mat-icon matSuffix class="text-warning">sentiment_very_satisfied</mat-icon>
+                            </mat-form-field>
+                                  <br>
+                            <mat-form-field appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input matInput placeholder="Enter your password" [type]="hide ? 'password' : 'text'" id="password" name="password" ngModel required>
+                                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                                </button>
+                              </mat-form-field>                           
+                            </div>
+                            <br>
+                       </div>   
+                       <button type="submit" mat-raised-button class="mat-primary">Sign-Up</button>
+            </form>
+            <br>
+            <p>Already I have an account<a routerLink="/login">Login</a></p>
+            </mat-card>
+            <br>
+        </div>
+    </div>
+</div>

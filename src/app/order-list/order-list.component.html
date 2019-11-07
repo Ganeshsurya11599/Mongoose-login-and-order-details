@@ -1,0 +1,31 @@
+<div class="container">
+        <h1 class="text-center text-info">Order-Lists</h1>
+    <div class="row mt-5">
+        <div class="col-12">
+                <table class="table table-hover text-success text-center">
+                        <thead>
+                            <th>Username</th>
+                            <th>ProductId</th>
+                            <th>ProductName</th>
+                            <th>KiloGrams</th>
+                            <th>per/kg-Prize</th>
+                            <th>Edit</th>
+                            <th>Delete</th>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let pro of view;let i = index">
+                                <td>{{pro.username}}</td>
+                                <td>{{i+1}}</td>
+                                <td>{{pro.productName}}</td>
+                                <td>{{pro.weight}}</td>
+                                <td>{{pro.price}}</td>
+                                <td><a class="btn text-success" [routerLink]="['/order-edit/',pro._id]"><i class="material-icons">edit</i></a></td>
+                                <td><a class="btn text-danger"><i class="material-icons" (click)="del(pro._id)">delete</i></a></td>
+                            </tr>
+                        </tbody> 
+                    </table>
+                    <button class="btn btn-primary" routerLink="/order">Go To Order</button>
+        </div>
+    </div>
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,28 @@
+<div class="container">
+        <h1 class="text-center text-success">Orders</h1>
+        <form #form1="ngForm" autocomplete="off" (ngSubmit)="onSubmit(form1.value)">
+    <div class="row">
+        <div class="col-12">
+                <input type="hidden" name="id">
+                <div class="form-group">
+                    <input type="name" name="productName" id="productName" #productName="ngModel" ngModel class="form-control" placeholder="productName" required>
+                    <div *ngIf="productName.invalid && productName.touched" class="validation-error div">Enter the Product Name !</div>
+                </div>
+        
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <input type="number" name="price" id="price" class="form-control" #price="ngModel" ngModel placeholder="price" required>
+                    <div *ngIf="price.invalid && price.touched" class="validation-error div">Enter the Price !</div>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <input type="number" name="weight" id="weight" class="form-control" #weight="ngModel" ngModel placeholder="weight" required>
+                    <div *ngIf="weight.invalid && weight.touched" class="validation-error div">Enter the Weight !</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button type="submit" [disabled]="form1.invalid" class="btn btn-block btn-lg btn-info">SUBMIT</button>
+                </div>
+            </div>
+        </div>
+            </form>
+            </div>
