@@ -2,9 +2,9 @@
         <h1 class="text-center text-info">Order-Lists</h1>
     <div class="row mt-5">
         <div class="col-12">
-                <table class="table table-hover text-success text-center">
-                        <thead>
-                            <th>Username</th>
+            <div class="table-responsive">
+                <table class="table table-hover text-success text-center table-striped">
+                        <thead class="bg-dark text-info">
                             <th>ProductId</th>
                             <th>ProductName</th>
                             <th>KiloGrams</th>
@@ -14,7 +14,6 @@
                         </thead>
                         <tbody>
                             <tr *ngFor="let pro of view;let i = index">
-                                <td>{{pro.username}}</td>
                                 <td>{{i+1}}</td>
                                 <td>{{pro.productName}}</td>
                                 <td>{{pro.weight}}</td>
@@ -24,6 +23,7 @@
                             </tr>
                         </tbody> 
                     </table>
+                    </div>
                     <button class="btn btn-primary" routerLink="/order">Go To Order</button>
         </div>
     </div>

@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 medium-list">
             <mat-card>
-               <form name="user" #user="ngForm" (ngSubmit)="user.valid && onSubmit(user.value)">
+               <form name="user" #user="ngForm" (ngSubmit)="user.valid && loginUser(user.value)">
                 <div class="list-view text-center">
                     <div class="list-header">
                             <h2 class="bounceOut">Login-Page</h2>

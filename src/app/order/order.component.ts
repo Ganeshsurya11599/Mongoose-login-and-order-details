@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from '../service.service';
 import { Router, ActivatedRoute } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-order',
@@ -10,6 +11,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class OrderComponent implements OnInit {
 
   edit:any;
+  currentUser: Object = {};
   id:any;
   bindData:any;
 data:any={
@@ -29,8 +31,16 @@ name:any;
     this.service.sendData(value).subscribe(res=>{
       this.data=res;
       console.log(this.data)
-      alert('successfully added');
+      Swal.fire(
+        'Order created',
+        '',
+        'info'
+      )
       this.router.navigate(['/order-list']);
     });
+  }
+
+  logout() {
+    this.service.doLogout()
   }
 }

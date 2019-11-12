@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-12 text-center">
             <mat-card class="mt-2">
-            <form name="form" #form="ngForm" (ngSubmit)="onSubmit(form.value)">
+            <form name="form" #form="ngForm" (ngSubmit)="form.valid && onSubmit(form.value)">
                     <div class="list-view text-center">
                             <div class="list-header">
                                     <h2 class="bounceOut">Sign-Up</h2>
@@ -31,7 +31,8 @@
                             </div>
                             <br>
                        </div>   
-                       <button type="submit" mat-raised-button class="mat-primary">Sign-Up</button>
+                       <br>
+                       <button type="submit" mat-raised-button class="btn mat-primary" [disabled]=!form.valid>Sign-Up</button>
             </form>
             <br>
             <p>Already I have an account<a routerLink="/login">Login</a></p>
